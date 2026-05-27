@@ -20,7 +20,7 @@ test.beforeEach(async ({ page }) => {
   homePage = new HomePage(page);
   editArticlePage = new EditArticlePage(page);
   viewArticlePage = new ViewArticlePage(page);
-  article = generateNewArticleData();
+  article = generateNewArticleData(1);
   console.log('Generated article:', JSON.stringify(article, null, 2));
 
 
@@ -31,7 +31,7 @@ test.beforeEach(async ({ page }) => {
 
 test('Remove the article `tag` for the existing article', async () => {
   await viewArticlePage.clickEditArticleButton();
-  await editArticlePage.clickOnDeleteTag('article.tag');
+  await editArticlePage.clickOnDeleteTag(article.tags[0]);
   await editArticlePage.clickUpdateArticleButton();
   await viewArticlePage.assertTagIsNotVisible();
   

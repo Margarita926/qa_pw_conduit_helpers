@@ -62,9 +62,8 @@ async assertTitleFieldHasValue(value) {
 
 async clickOnDeleteTag(tagName) {
 
-    const tagSpan = this.page.locator('span', { hasText: tagName }).first();
-     await tagSpan.hover();
-     await tagSpan.locator('button').click();
+    const tagSpan = this.page.locator('span', { hasText: tagName })
+     await tagSpan.locator('i').click();
 
 }
 
