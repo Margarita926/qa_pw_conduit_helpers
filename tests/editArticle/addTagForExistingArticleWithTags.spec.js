@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import {  expect,test } from '@playwright/test';
 import { EditArticlePage } from '../../src/ui/pages/article/EditArticlePage';
 import { ViewArticlePage } from '../../src/ui/pages/article/ViewArticlePage';
 import { generateNewArticleData } from '../../src/common/testData/generateNewArticleData';
@@ -33,6 +33,7 @@ await expect(editArticlePage.updateArticleButton).toBeEnabled();
   await editArticlePage.clickUpdateArticleButton();
     await viewArticlePage.page.waitForTimeout(1000);
       await viewArticlePage.page.reload();
+      
   await viewArticlePage.clickEditArticleButton();
      await viewArticlePage.page.reload();
     await viewArticlePage.page.waitForTimeout(1000);

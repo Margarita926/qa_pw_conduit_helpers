@@ -37,7 +37,7 @@ export class ViewArticlePage {
       await this.page.waitForTimeout(1000);
     
       await expect(this.page.locator('.tag-list', { hasText: tagText })).toBeVisible();
-        await this.page.locator('.tag-list', { hasText: 'new-tag' }).waitFor();
+        await this.page.locator('.tag-list', { hasText: tagText }).waitFor();
     });
   }
 
